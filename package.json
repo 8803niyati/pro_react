@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "generate-unique-id": "^2.0.3"
+  }
+}

@@ -1,0 +1,78 @@
+.custom-header {
+  background-color: white;
+  padding: 10px 0;
+}
+
+.logo-img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.vertical-line {
+  height: 40px;
+  width: 1px;
+  background-color: #ddd;
+  margin: 0 15px;
+}
+
+.delivery-location {
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.location-text {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.search-group {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search-input {
+  font-size: 14px;
+  padding-left: 0;
+}
+
+.search-input:focus {
+  box-shadow: none;
+  outline: 10px;
+}
+
+.input-group-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  height: 48px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+}
+.search-icon,
+.clear-icon {
+  font-size: 22px;
+  color: #666;
+}
+
+.login-text {
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+}
+
+.add-products-btn {
+  padding: 6px 12px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
