@@ -45,7 +45,7 @@ const AddProduct = () => {
     let id = generateUniqueId({ length: 6, useLetters: false });
     inputForm.id = id;
     dispatch(addProduct(inputForm));
-    navigate("/");
+      navigate("/");
   };
 
   return (
