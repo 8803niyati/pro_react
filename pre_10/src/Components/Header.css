@@ -1,0 +1,31 @@
+
+body {
+  padding-top: 90px; 
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.custom-header {
+  width: 100%;
+  z-index: 999;
+   margin-bottom: 5px;
+}
+
+.logo-img {
+  height: 30px;
+}
+
+.search-bar input:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+.vertical-divider {
+  height: 70px;
+  width: 1px;
+  background-color: #ccc;
+}
+

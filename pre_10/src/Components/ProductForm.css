@@ -1,0 +1,62 @@
+.product-form-container {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  padding: 40px 0;
+}
+.product-form-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-form-card h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #333;
+}
+
+form .form-label {
+  font-weight: 500;
+  color: #444;
+}
+
+form .form-control,
+form .form-select {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+}
+
+form .form-control:focus,
+form .form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.15rem rgba(150, 168, 188, 0.25);
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #023103;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+ 
+}
+
+

@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": "302412",
+      "title": "Cup Curd",
+      "desc": "Amul Masti",
+      "price": "24",
+      "category": "Cold Drinks & Juices",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/e47341cd-d920-4c0a-a9f2-20d663976cd0.png"
+    },
+    {
+      "id": "288740",
+      "title": "Thums Up",
+      "desc": "Soft Drink",
+      "price": "45",
+      "category": "Cold Drinks & Juices",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/629b2189-65f7-49cb-bb5d-8bfdf0befea7.png"
+    },
+    {
+      "id": "507858",
+      "title": "Chewy Toffee",
+      "desc": "Fruittella Strawberry Flavour",
+      "price": "12",
+      "category": "Candies & Gums",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/bb8b45bc-b782-4289-922c-cd6be704d063.png"
+    },
+    {
+      "id": "801594",
+      "title": " Fruit Bar",
+      "desc": "GO DESI Fruti Twist",
+      "price": "69",
+      "category": "Dairy & Bread",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/e3499802-15a7-4bff-b7ba-8be323510781.png"
+    }
+  ]
+}

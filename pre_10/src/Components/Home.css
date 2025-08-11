@@ -1,0 +1,42 @@
+.product-card {
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+  padding: 12px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.183) 2px 2px 8px;
+  text-align: center;
+  height: 100%;
+  position: relative;
+
+  width: 250px; /* Width vadhaari */
+  margin: 0 auto; /* Center karva */
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  height: 140px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 32px;
+}
+
+.product-price {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+}
