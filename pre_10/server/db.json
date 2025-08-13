@@ -31,6 +31,30 @@
       "price": "69",
       "category": "Dairy & Bread",
       "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/e3499802-15a7-4bff-b7ba-8be323510781.png"
+    },
+    {
+      "id": "491990",
+      "title": "Amul",
+      "desc": "Masti Cup Curd",
+      "price": "24",
+      "category": "Candies & Gums",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/e47341cd-d920-4c0a-a9f2-20d663976cd0.png"
+    },
+    {
+      "id": "141584",
+      "title": "Bhujia Sev",
+      "desc": "Protein Chef Baked Bikaneri",
+      "price": "99",
+      "category": "Rolling paper & tobacco",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/7124db79-286a-476a-93ef-11e69508564b.png"
+    },
+    {
+      "id": "080961",
+      "title": "Candy",
+      "desc": "Parle Poppins",
+      "price": "25",
+      "category": "Candies & Gums",
+      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/7420f5a7-bd7b-4c2b-929f-d6034bb254a0.png"
     }
   ]
 }
