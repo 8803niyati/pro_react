@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProductAsync } from "../Services/Actions/productAction";
 import { uploadImage } from "../Services/imageUpload";
 import { IoBagAdd } from "react-icons/io5";
-import "./ProductFrom.css";
+import "./AddProduct.css";
 
 const AddProduct = () => {
   const { isCreated, isError } = useSelector((state) => state.productReducer);
@@ -87,121 +87,122 @@ const AddProduct = () => {
   }, [isCreated]);
 
   return (
-    <Container className="product-form-container">
+<div className="product-form-container">
       <div className="product-form-card">
-        <h1>Add New Product</h1>
-        {isError ? <p className="text-danger">{isError}</p> : ""}
-
-        <Form className="mt-4" onSubmit={handleSubmit}>
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm="2">
-              Title
-            </Form.Label>
-            <Col sm="6">
-              <Form.Control
-                type="text"
-                placeholder="Enter Title"
-                name="title"
-                value={inputForm.title}
-                onChange={handleChanged}
-                isInvalid={!!errors.title}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.title}
-              </Form.Control.Feedback>
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm="2">
-              Description
-            </Form.Label>
-            <Col sm="6">
-              <Form.Control
-                type="text"
-                placeholder="Enter Description"
-                name="desc"
-                value={inputForm.desc}
-                onChange={handleChanged}
-                isInvalid={!!errors.desc}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.desc}
-              </Form.Control.Feedback>
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm="2">
-              Price
-            </Form.Label>
-            <Col sm="6">
-              <Form.Control
-                type="number"
-                placeholder="Enter Price"
-                name="price"
-                value={inputForm.price}
-                onChange={handleChanged}
-                isInvalid={!!errors.price}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.price}
-              </Form.Control.Feedback>
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm="2">
-              Category
-            </Form.Label>
-            <Col sm="6">
-              <Form.Select
-                name="category"
-                value={inputForm.category}
-                onChange={handleChanged}
-                isInvalid={!!errors.category}
-              >
-                <option>Select Category</option>
-              <option value="Cold Drinks & Juices">Cold Drinks & Juices</option>
-              <option value="Candies & Gums">Candies & Gums</option>
-              <option value="Rolling paper & tobacco">Rolling paper & tobacco</option>
-              <option value="Dairy & Bread">Dairy & Bread</option>
-                <option value="Dairy & Bread">Dairy & Bread</option>
-              </Form.Select>
-              <Form.Control.Feedback type="invalid">
-                {errors.category}
-              </Form.Control.Feedback>
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm="2">
-              Image
-            </Form.Label>
-            <Col sm="6">
-              <Form.Control
-                type="file"
-                name="image"
-                onChange={handleFileChanged}
-                isInvalid={!!errors.image}
-              />
-              <Form.Control.Feedback type="invalid">
-                {errors.image}
-              </Form.Control.Feedback>
-            </Col>
-          </Form.Group>
-
-          <Button
-            type="submit"
-            variant="dark"
-            className="w-90 d-flex align-items-center justify-content-center gap-2"
+        <h1>ADD NEW PRODUCT</h1>
+        {isError && (
+          <div
+            className="form-error"
+            style={{
+              textAlign: "center",
+              fontSize: "1.2rem",
+              fontWeight: "bold",
+              margin: "20px 0",
+              color: "red",
+            }}
           >
-            <IoBagAdd size={20} />
+            {isError}
+          </div>
+        )}
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              type="text"
+              name="title"
+              placeholder="Enter Title"
+              value={inputForm.title}
+              onChange={handleChanged}
+              isInvalid={!!errors.title}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.title}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              type="text"
+              name="desc"
+              placeholder="Enter Description"
+              value={inputForm.desc}
+              onChange={handleChanged}
+              isInvalid={!!errors.desc}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.desc}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Price</Form.Label>
+            <Form.Control
+              type="number"
+              name="price"
+              placeholder="Enter Price"
+              value={inputForm.price}
+              onChange={handleChanged}
+              isInvalid={!!errors.price}
+              onWheel={(e) => e.target.blur()}
+              onKeyDown={(e) =>
+                (e.key === "ArrowUp" || e.key === "ArrowDown") && e.preventDefault()
+              }
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.price}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+
+          <Form.Group className="mb-3">
+            <Form.Label>Category</Form.Label>
+            <Form.Select
+              name="category"
+              value={inputForm.category}
+              onChange={handleChanged}
+              isInvalid={!!errors.category}
+            >
+              <option value="">Select Category</option>
+              <option value="Cold Drinks & Juices">
+                Cold Drinks & Juices
+              </option>
+              <option value="Candies & Gums">Candies & Gums</option>
+              <option value="Snacks & Munchies">Snacks & Munchies</option>
+              <option value="Dairy & Bread">Dairy & Bread</option>
+            </Form.Select>
+            <Form.Control.Feedback type="invalid">
+              {errors.category}
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group as={Row} className="mb-3">
+          <Form.Label column sm="2">Image</Form.Label>
+          <Col sm="12">
+            {/* File input for new upload */}
+            <Form.Control
+              type="file"
+              onChange={handleFileChanged}
+            />
+            {/* Preview of current/new image */}
+            {inputForm.image && (
+              <div className="mt-2">
+                <img
+                  src={inputForm.image}
+                  alt="Preview"
+                  style={{ width: "120px", height: "auto", borderRadius: "8px", border: "1px solid #ccc" }}
+                />
+              </div>
+            )}
+          </Col>
+        </Form.Group>
+
+          <Button type="submit" variant="dark" className="w-100">
             Add Product
           </Button>
         </Form>
       </div>
-    </Container>
+    </div>
   );
 };
 
