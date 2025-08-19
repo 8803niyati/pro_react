@@ -15,7 +15,9 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const productsPerPage = 5;
+
+  // CHANGE HERE 👉 8 products per page
+  const productsPerPage = 8;
 
   useEffect(() => {
     dispatch(getAllProductAsync());
