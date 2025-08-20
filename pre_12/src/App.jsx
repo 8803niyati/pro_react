@@ -12,6 +12,7 @@ import CategorySection from "./Components/CategorySection";
 
 
 
+
 function App() {
   const location = useLocation();
   const [showLoader, setShowLoader] = useState(false);
