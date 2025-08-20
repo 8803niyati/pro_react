@@ -11,11 +11,12 @@ const Home = () => {
   const { products, isLoading } = useSelector((state) => state.productReducer);
   const navigate = useNavigate();
 
-  // local states
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const productsPerPage = 5;
+
+  // ✅ per page 8 products
+  const productsPerPage = 8;
 
   useEffect(() => {
     dispatch(getAllProductAsync());
@@ -51,6 +52,16 @@ const Home = () => {
     setCurrentPage(selected);
   };
 
+  // ✅ Auto redirect to last page on add/delete
+  useEffect(() => {
+    if (filteredProducts.length > 0) {
+      const newPage = Math.ceil(filteredProducts.length / productsPerPage) - 1;
+      if (currentPage !== newPage) {
+        setCurrentPage(newPage);
+      }
+    }
+  }, [filteredProducts.length]); // run only when product count changes
+
   // get unique categories
   const categories = [...new Set(products.map((prod) => prod.category).filter(Boolean))];
 
@@ -67,7 +78,7 @@ const Home = () => {
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
-                setCurrentPage(0); // reset to page 1
+                setCurrentPage(0); // reset to first page when searching
               }}
             />
           </InputGroup>
@@ -77,7 +88,7 @@ const Home = () => {
             value={categoryFilter}
             onChange={(e) => {
               setCategoryFilter(e.target.value);
-              setCurrentPage(0); // reset to page 1
+              setCurrentPage(0); // reset to first page when filter applied
             }}
           >
             <option value="">All Categories</option>
