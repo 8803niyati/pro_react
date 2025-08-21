@@ -1,0 +1,116 @@
+
+ /* .container {
+  max-width: 500px;
+  background: #ffffff;
+  padding: 40px 30px;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}  */
+
+/* Heading */
+h2 {
+  text-align: center;
+  color: #343a40;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 500;
+  color: #495057;
+  font-size: 1rem;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #ced4da;
+  padding: 10px 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  
+}
+
+.form-control:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+/* Buttons */
+button {
+  background-color: #6c63ff;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 25px;
+  width: 30%;
+}
+
+button:hover {
+  background-color: #5952d4;
+  transform: scale(1.03);
+}
+
+/* Google button */
+button.btn-secondary {
+  background-color: #db4437;
+  margin-top: 10px;
+}
+
+button.btn-secondary:hover {
+  background-color: #c33d2e;
+}
+
+/* Error messages */
+p.error-message {
+  color: #ff4d4f;
+  font-weight: 500;
+  text-align: center;
+  background-color: #ffe6e6;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* SignUp link */
+p a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+p a:hover {
+  text-decoration: underline;
+  color: #5952d4;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+    margin-top: 30px;
+  }
+
+  .form-label {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+  }
+} 

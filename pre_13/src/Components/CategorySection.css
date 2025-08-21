@@ -1,0 +1,27 @@
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  justify-items: center;
+  margin: 20px auto;
+  max-width: 1400px;
+}
+
+.category-card img {
+  width:100px;   /* bigger than before */
+  height: 200px;  /* bigger than before */
+  object-fit: contain;
+  display: block;
+}
+
+
+.category-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.category-card p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+}
