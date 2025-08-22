@@ -27,6 +27,7 @@ const Home = () => {
   }, [dispatch]);
 
   const handleEdit = (id) => {
+     const { product, isUpdated } = useSelector((state) => state.productReducer);
     navigate(`/edit-product/${id}`);
   };
 

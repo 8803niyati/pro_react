@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Form, Row, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom"; 
 import { signInAsync, signInWithGoogleAsync } from "../../Services/Actions/userAction";
 import "./SignIn.css";
@@ -44,7 +45,9 @@ const SignIn = () => {
   return (
     <Container className="d-flex justify-content-center align-items-center min-vh-100">
       <Card className="form-container">
+       
         <h2 className="mb-4">Sign In</h2>
+        
 
         {error && <p className="error-message">{error}</p>}
 
@@ -88,7 +91,7 @@ const SignIn = () => {
 
         <div className="text-center mt-3">
           <Button onClick={handleGoogleLogin} className="google-btn w-100">
-            Sign In with Google
+          <FaGoogle className="me-2" />  Sign In with Google
           </Button>
         </div>
 

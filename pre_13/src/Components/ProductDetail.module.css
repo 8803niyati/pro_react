@@ -8,8 +8,8 @@
 .productDetailLayout {
   display: flex;
   align-items: flex-start;
-  gap: 20px;              /* spacing between image and details */
-  max-width: 1000px;       /* 👈 card ni width nani kari */
+  gap: 20px;             
+  max-width: 1000px;  
   width: 100%;
   background: #fff;
   border-radius: 12px;
