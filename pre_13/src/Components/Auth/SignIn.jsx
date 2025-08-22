@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Row, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom"; 
 import { signInAsync, signInWithGoogleAsync } from "../../Services/Actions/userAction";
 import "./SignIn.css";
 
-
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Safe destructuring with fallback
+  // Safe destructuring
   const { user, error } = useSelector((state) => state.userReducer || {});
 
   const initialState = {
@@ -43,51 +42,60 @@ const SignIn = () => {
   }, [user, navigate]);
 
   return (
-    <Container className="mt-3">
-      <h2>Sign IN </h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      <Form className="mt-4" onSubmit={handleSubmit}>
-        <Form.Group as={Row} className="mb-3">
-          <Form.Label column sm="2">
-            Email
-          </Form.Label>
-          <Col sm="6">
-            <Form.Control
-              type="text"
-              placeholder="Enter Email"
-              name="email"
-              value={inputForm.email}
-              onChange={handleChanged}
-            />
-          </Col>
-        </Form.Group>
+    <Container className="d-flex justify-content-center align-items-center min-vh-100">
+      <Card className="form-container">
+        <h2 className="mb-4">Sign In</h2>
 
-        <Form.Group as={Row} className="mb-3">
-          <Form.Label column sm="2">
-            Password
-          </Form.Label>
-          <Col sm="6">
-            <Form.Control
-              type="password"
-              placeholder="Enter Password"
-              name="password"
-              value={inputForm.password}
-              onChange={handleChanged}
-            />
-          </Col>
-        </Form.Group>
+        {error && <p className="error-message">{error}</p>}
 
-        <Button type="submit">Sign IN</Button>
-      </Form>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="3" className="form-label">
+              Email
+            </Form.Label>
+            <Col sm="9">
+              <Form.Control
+                type="text"
+                placeholder="Enter Email"
+                name="email"
+                value={inputForm.email}
+                onChange={handleChanged}
+              />
+            </Col>
+          </Form.Group>
 
-      <br />
-      <Button onClick={handleGoogleLogin} variant="secondary">
-        SignIn with Google
-      </Button>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column sm="3" className="form-label">
+              Password
+            </Form.Label>
+            <Col sm="9">
+              <Form.Control
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                value={inputForm.password}
+                onChange={handleChanged}
+              />
+            </Col>
+          </Form.Group>
 
-      <p><br></br>
-        Create an Account? <Link to={"/signUp"}>SignUP</Link>
-      </p>
+          <div className="text-center">
+            <Button type="submit" className="w-100 custom-btn">
+              Sign In
+            </Button>
+          </div>
+        </Form>
+
+        <div className="text-center mt-3">
+          <Button onClick={handleGoogleLogin} className="google-btn w-100">
+            Sign In with Google
+          </Button>
+        </div>
+
+        <p className="mt-4">
+          Don’t have an account? <Link to={"/signUp"}>Sign Up</Link>
+        </p>
+      </Card>
     </Container>
   );
 };

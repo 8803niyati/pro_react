@@ -52,7 +52,7 @@ const Header = () => {
             <span className="me-2">{user.email}</span> <Button onClick={handleLogOut}>LogOut</Button>
             </>
             :
-            <Link className="btn btn-warning" to={"/signIn"}>
+            <Link className="btn btn-danger" to={"/signIn"}>
             SignIn
           </Link>
           }

@@ -1,116 +1,115 @@
-
- /* .container {
-  max-width: 500px;
-  background: #ffffff;
+/* 🔹 Form Card */
+.form-container {
+  max-width: 450px;
+  width: 100%;
   padding: 40px 30px;
-  margin: 50px auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-}  */
-
-/* Heading */
-h2 {
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
-  color: #343a40;
-  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔹 Heading */
+.form-container h2 {
   font-weight: 700;
-  letter-spacing: 1px;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
 }
 
-/* Labels */
+/* 🔹 Labels */
 .form-label {
-  font-weight: 500;
-  color: #495057;
-  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
 }
 
-/* Inputs */
-.form-control {
+/* 🔹 Inputs */
+.form-container .form-control {
   border-radius: 12px;
-  border: 1px solid #ced4da;
-  padding: 10px 10px;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #ffffff;
-  
 }
 
-.form-control:focus {
+.form-container .form-control:focus {
   border-color: #6c63ff;
-  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.4);
 }
 
-/* Buttons */
-button {
-  background-color: #6c63ff;
+/* 🔹 Primary Button */
+.custom-btn {
+  background: linear-gradient(135deg, #6c63ff, #5146d9);
   border: none;
   color: white;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-size: 1rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 25px;
-  width: 30%;
+  border-radius: 12px;
+  padding: 10px 0;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background-color: #5952d4;
-  transform: scale(1.03);
+.custom-btn:hover {
+  background: linear-gradient(135deg, #5146d9, #3c34b5);
+  transform: scale(1.02);
 }
 
-/* Google button */
-button.btn-secondary {
-  background-color: #db4437;
-  margin-top: 10px;
+/* 🔹 Google Button */
+.google-btn {
+  background: #db4437;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 0;
+  transition: 0.3s ease;
 }
 
-button.btn-secondary:hover {
-  background-color: #c33d2e;
+.google-btn:hover {
+  background: #b5362c;
+  transform: scale(1.02);
 }
 
-/* Error messages */
-p.error-message {
+/* 🔹 Error message */
+.error-message {
   color: #ff4d4f;
+  font-size: 0.9rem;
   font-weight: 500;
-  text-align: center;
-  background-color: #ffe6e6;
+  background: #ffe6e6;
   padding: 8px 12px;
   border-radius: 10px;
   margin-bottom: 15px;
 }
 
-/* SignUp link */
-p a {
+/* 🔹 Link */
+.form-container p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.form-container p a {
   color: #6c63ff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-p a:hover {
+.form-container p a:hover {
   text-decoration: underline;
-  color: #5952d4;
+  color: #5146d9;
 }
 
-
-@media (max-width: 768px) {
-  .container {
+/* 🔹 Responsive */
+@media (max-width: 576px) {
+  .form-container {
     padding: 30px 20px;
-    margin-top: 30px;
   }
 
   .form-label {
-    font-size: 0.95rem;
+    text-align: left !important;
   }
-
-  button {
-    width: 100%;
-  }
-} 
+}

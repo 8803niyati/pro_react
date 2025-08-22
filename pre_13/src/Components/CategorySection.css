@@ -8,8 +8,8 @@
 }
 
 .category-card img {
-  width:100px;   /* bigger than before */
-  height: 200px;  /* bigger than before */
+  width:100px;  
+  height: 200px;  
   object-fit: contain;
   display: block;
 }
