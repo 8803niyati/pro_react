@@ -53,7 +53,7 @@ const Header = () => {
             </>
             :
             <Link className="btn btn-danger" to={"/signIn"}>
-            SignIn
+            login
           </Link>
           }
           </Col>

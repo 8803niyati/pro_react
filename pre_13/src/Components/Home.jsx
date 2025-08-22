@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BlinkitSection from "./BlinkitSection";
 import CategorySection from "./CategorySection";
+import Footer from "./Footer";
 import { deleteProductAsync, getAllProductAsync } from "../Services/Actions/productAction";
 import { Button, Card, Container, Row, Col, Spinner, Form, InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router";
@@ -11,6 +12,7 @@ import "./Home.css";
 const Home = () => {
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector((state) => state.productReducer);
+  
   const navigate = useNavigate();
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -66,8 +68,13 @@ const Home = () => {
 
   return (
     <>
+     
       <BlinkitSection />
+
       <CategorySection />
+      
+      
+      
       <Container className="my-4">
         <h2 className="mb-4 text-center">PRODUCT LISTING</h2>
 
@@ -177,6 +184,7 @@ const Home = () => {
           </>
         )}
       </Container>
+            <Footer/>
     </>
   );
 };

@@ -7,14 +7,9 @@ import Loader from "./Components/Loader";
 import Home from "./Components/Home";
 import AddProduct from "./Components/AddProduct";
 import EditProduct from "./Components/EditProduct";
-import BlinkitSection from "./Components/BlinkitSection";
-import CategorySection from "./Components/CategorySection";
 import ProductDetail from "./Components/ProductDetail";
 import SignIn from "./Components/Auth/SignIn";
 import SignUp from "./Components/Auth/SignUp";
-
-
-
 
 function App() {
   const location = useLocation();
@@ -46,8 +41,8 @@ function App() {
         <>
           {!hideSections && (
             <>
-              {/* <BlinkitSection />
-              <CategorySection/> */}
+            {/* <BlinkitSection />
+              <CategorySection/>  */}
             
             </>
           )}
