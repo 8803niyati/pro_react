@@ -1,0 +1,79 @@
+.product-form-container {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe6f0, #ffb3d9); /* Pink gradient */
+  padding: 40px 0;
+}
+
+.product-form-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15); /* Soft pink shadow */
+  width: 100%;
+  max-width: 700px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2); /* Pink hover shadow */
+}
+
+.product-form-card h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #d63384; /* Nykaa pink */
+}
+
+form .form-label {
+  font-weight: 500;
+  color: #d63384; /* Pink labels */
+}
+
+form .form-control,
+form .form-select {
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ffb3d9;
+}
+
+form .form-control:focus,
+form .form-select:focus {
+  border-color: #ff66b3;
+  box-shadow: 0 0 0 0.15rem rgba(255, 182, 193, 0.5); /* Pink focus glow */
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #ff3399; /* Pink button */
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #e60073; 
+  transform: scale(1.05);
+}
+.btn-pink {
+  background-color: #ff3f6c !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+  background-color: #e2335e !important; /* Darker Pink */
+  color: white !important;
+}

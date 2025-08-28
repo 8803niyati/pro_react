@@ -7,8 +7,9 @@
   text-align: center;
   height: 100%;
   position: relative;
-  width: 250px;
-  margin: 0 auto;  
+
+  width: 250px; /* Width vadhaari */
+  margin: 0 auto; /* Center karva */
 }
 
 .product-card:hover {

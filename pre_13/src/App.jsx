@@ -7,9 +7,10 @@ import Loader from "./Components/Loader";
 import Home from "./Components/Home";
 import AddProduct from "./Components/AddProduct";
 import EditProduct from "./Components/EditProduct";
-import ProductDetail from "./Components/ProductDetail";
-import SignIn from "./Components/Auth/SignIn";
-import SignUp from "./Components/Auth/SignUp";
+import BlinkitSection from "./Components/BlinkitSection";
+import CategorySection from "./Components/CategorySection";
+
+
 
 function App() {
   const location = useLocation();
@@ -41,22 +42,17 @@ function App() {
         <>
           {!hideSections && (
             <>
-            {/* <BlinkitSection />
-              <CategorySection/>  */}
+              <BlinkitSection />
+              <CategorySection/>
             
             </>
           )}
 
           <Routes>
-            
             <Route path="/" element={<Home />} />
             <Route path="/add-product" element={<AddProduct />} />
             <Route path="/edit-product/:id" element={<EditProduct />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signUp" element={<SignUp />} />
-             
-           
+            
           </Routes>
         </>
       )}
