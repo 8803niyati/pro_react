@@ -8,7 +8,7 @@ import Home from "./Components/Home";
 import AddProduct from "./Components/AddProduct";
 import EditProduct from "./Components/EditProduct";
 
-import NykaaSection from "./Components/NykaaSection";
+
 import SignIn from "./Components/SignIn";
 import SignUp from "./Components/Signup";
 
@@ -45,7 +45,7 @@ function App() {
         <>
           {!hideSections && (
             <>
-              <NykaaSection/>
+           
               
             
             </>
