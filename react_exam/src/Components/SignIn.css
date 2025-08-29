@@ -1,87 +1,119 @@
-/* Full page background */
-.login-page {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background: linear-gradient(135deg, #3f0db5, #1c0f6e); Purple gradient */
-}
-
-/* Login card */
-.login-box {
-  background: #fff;
-  padding: 35px 30px;
-  border-radius: 12px;
-  width: 360px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+/* 🔹 Form Card */
+.form-container {
+  max-width: 450px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 18px;
+  background: #ffffff; /* white background */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Title */
-.login-box h2 {
-  font-weight: bold;
-  color: #4b0082;
-  margin-bottom: 25px;
-  position: relative;
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-.login-box h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #4b0082;
-  margin: 6px auto 0;
-  border-radius: 2px;
+/* 🔹 Heading */
+.form-container h2 {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
 }
 
-/* Input fields */
-.login-box input {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  background: #f0f0f0;
-  font-size: 14px;
+/* 🔹 Labels */
+.form-label {
+  font-weight: 600;
+  color: #444;
+}
+
+/* 🔹 Inputs */
+.form-container .form-control {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  font-size: 1rem;
+  background-color: #fff; /* ensures white background */
+  transition: all 0.3s ease;
+  outline: none; /* remove default outline */
+}
+
+.form-container .form-control:focus {
+  border-color: #aaa; /* subtle border on focus */
+  box-shadow: none;   /* remove blue glow */
+  background-color: #fff; /* keep white */
   outline: none;
-  transition: 0.3s;
 }
 
-.login-box input:focus {
-  background: #e8e8e8;
-  box-shadow: 0 0 0 2px #6a0dad55;
-}
-
-/* Buttons */
-.login-btn {
-  /* background-color: #6a0dad; */
-  color: #fff;
+/* 🔹 Primary Button */
+.custom-btn {
+  background: linear-gradient(135deg, #6c63ff, #5146d9);
   border: none;
-  font-weight: bold;
-  padding: 12px;
-  border-radius: 25px;
-  width: 100%;
-  cursor: pointer;
-  transition: 0.3s;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 0;
+  transition: 0.3s ease;
 }
 
-.login-btn:hover {
-  background-color: #580a9a;
+.custom-btn:hover {
+  background: linear-gradient(135deg, #5146d9, #3c34b5);
+  transform: scale(1.02);
 }
 
-/* Links */
-.extra-links {
+/* 🔹 Google Button */
+.google-btn {
+  background: #d86a60;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 0;
+  transition: 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #b5362c;
+  transform: scale(1.02);
+}
+
+/* 🔹 Error message */
+.error-message {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #ffe6e6;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Link */
+.form-container p {
   margin-top: 15px;
-  font-size: 13px;
+  font-size: 0.95rem;
 }
 
-.extra-links a {
-  color: #6a0dad;
+.form-container p a {
+  color: #6c63ff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-.extra-links a:hover {
+.form-container p a:hover {
   text-decoration: underline;
+  color: #5146d9;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 576px) {
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .form-label {
+    text-align: left !important;
+  }
 }
