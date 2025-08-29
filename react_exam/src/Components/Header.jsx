@@ -2,12 +2,16 @@ import { useState } from "react";
 import { Row, Col, Form, InputGroup, Button, Modal } from "react-bootstrap";
 import { IoSearch, IoCloseCircle } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
-import SignIn from "../Components/Auth/SignIn"; 
-import SignUp from "../Components/Auth/SignUp"; 
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../Services/Actions/userAction"; // Adjust import path
+
 import "./Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.userReducer || {});
+
   const [search, setSearch] = useState("");
 
   // Modal & toggle state
@@ -32,6 +36,11 @@ const Header = () => {
   };
 
   const toggleForm = () => setIsSignIn((prev) => !prev);
+
+  const handleLogOut = () => {
+    dispatch(logoutUser());
+    navigate("/"); // redirect home after logout
+  };
 
   return (
     <>
@@ -82,13 +91,23 @@ const Header = () => {
               xs={6}
               className="d-flex justify-content-end align-items-center gap-2"
             >
-              <Button
-                variant="outline-dark"
-                className="rounded-pill px-3 py-2"
-                onClick={openSignInModal}
-              >
-                Sign In
-              </Button>
+              {user ? (
+                <>
+                  <span className="me-2">{user.email}</span>
+                  <Button variant="outline-dark" onClick={handleLogOut}>
+                    LogOut
+                  </Button>
+                </>
+              ) : (
+                <Button
+                  variant="outline-dark"
+                  className="rounded-pill px-3 py-2"
+                  onClick={openSignInModal}
+                >
+                  Sign In
+                </Button>
+              )}
+
               <Link
                 to="/add-product"
                 className="btn btn-pink rounded-pill px-3 py-2"
@@ -101,29 +120,39 @@ const Header = () => {
       </header>
 
       {/* Sign In / Sign Up Modal */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered size="md">
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>{isSignIn ? "Sign In" : "Sign Up"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {isSignIn ? <SignIn /> : <SignUp />}
-          <div className="text-center mt-3">
-            {isSignIn ? (
+          {/* Replace below with your actual SignIn / SignUp component */}
+          {isSignIn ? (
+            <div>
+              <p>Sign In form goes here.</p>
               <p>
-                Don’t have an account?{" "}
-                <Button variant="link" onClick={toggleForm} style={{ padding: 0 }}>
+                Don't have an account?{" "}
+                <span
+                  style={{ color: "blue", cursor: "pointer" }}
+                  onClick={toggleForm}
+                >
                   Sign Up
-                </Button>
+                </span>
               </p>
-            ) : (
+            </div>
+          ) : (
+            <div>
+              <p>Sign Up form goes here.</p>
               <p>
                 Already have an account?{" "}
-                <Button variant="link" onClick={toggleForm} style={{ padding: 0 }}>
+                <span
+                  style={{ color: "blue", cursor: "pointer" }}
+                  onClick={toggleForm}
+                >
                   Sign In
-                </Button>
+                </span>
               </p>
-            )}
-          </div>
+            </div>
+          )}
         </Modal.Body>
       </Modal>
     </>

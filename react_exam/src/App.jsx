@@ -9,8 +9,8 @@ import AddProduct from "./Components/AddProduct";
 import EditProduct from "./Components/EditProduct";
 
 import NykaaSection from "./Components/NykaaSection";
-import SignIn from "./Components/Auth/SignIn";
-import SignUp from "./Components/Auth/SignUp";
+import SignIn from "./Components/SignIn";
+import SignUp from "./Components/Signup";
 
 
 
