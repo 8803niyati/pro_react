@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { deleteProductAsync, getAllProductAsync } from "../Services/Actions/productAction";
 import { Button, Card, Container, Row, Col, Spinner, Form, InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router";
@@ -12,9 +11,9 @@ const Home = () => {
   const { products, isLoading } = useSelector((state) => state.productReducer);
   const navigate = useNavigate();
 
-  // local states
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
+  const [sortOption, setSortOption] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const productsPerPage = 5;
 
@@ -22,16 +21,11 @@ const Home = () => {
     dispatch(getAllProductAsync());
   }, [dispatch]);
 
-  const handleEdit = (id) => {
-    navigate(`/edit-product/${id}`);
-  };
+  const handleEdit = (id) => navigate(`/edit-product/${id}`);
+  const handleDelete = (id) => dispatch(deleteProductAsync(id));
 
-  const handleDelete = (id) => {
-    dispatch(deleteProductAsync(id));
-  };
-
-  // filter products
-  const filteredProducts = products.filter((prod) => {
+  // Filter products by search and category
+  let filteredProducts = products.filter((prod) => {
     const matchesSearch =
       prod.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       prod.category?.toLowerCase().includes(searchTerm.toLowerCase());
@@ -43,33 +37,40 @@ const Home = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // pagination logic
+  // Sorting
+  if (sortOption === "price-asc") {
+    filteredProducts.sort((a, b) => a.price - b.price);
+  } else if (sortOption === "price-desc") {
+    filteredProducts.sort((a, b) => b.price - a.price);
+  } else if (sortOption === "title-asc") {
+    filteredProducts.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortOption === "title-desc") {
+    filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  // Pagination
   const pageCount = Math.ceil(filteredProducts.length / productsPerPage);
   const offset = currentPage * productsPerPage;
   const currentProducts = filteredProducts.slice(offset, offset + productsPerPage);
+  const handlePageChange = ({ selected }) => setCurrentPage(selected);
 
-  const handlePageChange = ({ selected }) => {
-    setCurrentPage(selected);
-  };
-
-  // get unique categories
+  // Unique categories
   const categories = [...new Set(products.map((prod) => prod.category).filter(Boolean))];
 
   return (
-
     <Container className="my-4">
       <h2 className="mb-4 text-center">PRODUCT LISTING</h2>
 
-      {/* Search and Filter */}
-      <Row className="mb-4">
-        <Col md={6}>
+      {/* Search, Filter & Sort */}
+      <Row className="mb-4 g-2">
+        <Col md={4}>
           <InputGroup>
             <Form.Control
               placeholder="Search by title or category..."
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
-                setCurrentPage(0); // reset to page 1
+                setCurrentPage(0);
               }}
             />
           </InputGroup>
@@ -79,24 +80,32 @@ const Home = () => {
             value={categoryFilter}
             onChange={(e) => {
               setCategoryFilter(e.target.value);
-              setCurrentPage(0); // reset to page 1
+              setCurrentPage(0);
             }}
           >
             <option value="">All Categories</option>
             {categories.map((cat, i) => (
-              <option key={i} value={cat}>
-                {cat}
-              </option>
+              <option key={i} value={cat}>{cat}</option>
             ))}
+          </Form.Select>
+        </Col>
+        <Col md={4}>
+          <Form.Select
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value)}
+          >
+            <option value="">Sort By</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="title-asc">Title: A → Z</option>
+            <option value="title-desc">Title: Z → A</option>
           </Form.Select>
         </Col>
       </Row>
 
       {/* Product Cards */}
       {isLoading ? (
-        <div className="text-center">
-          <Spinner animation="border" />
-        </div>
+        <div className="text-center"><Spinner animation="border" /></div>
       ) : filteredProducts.length === 0 ? (
         <p className="text-center">No products found</p>
       ) : (
@@ -112,20 +121,8 @@ const Home = () => {
                     <p className="product-category mb-2">{prod.category}</p>
                     <p className="mb-2 product-price">₹{prod.price}</p>
                     <div className="card-buttons">
-                      <Button
-                        variant="outline-success"
-                        size="sm"
-                        onClick={() => handleEdit(prod.id)}
-                      >
-                        Edit
-                      </Button>
-                      <Button
-                        variant="outline-danger"
-                        size="sm"
-                        onClick={() => handleDelete(prod.id)}
-                      >
-                        Delete
-                      </Button>
+                      <Button variant="outline-success" size="sm" onClick={() => handleEdit(prod.id)}>Edit</Button>
+                      <Button variant="outline-danger" size="sm" onClick={() => handleDelete(prod.id)}>Delete</Button>
                     </div>
                   </Card.Body>
                 </Card>
@@ -156,15 +153,10 @@ const Home = () => {
               forcePage={currentPage}
             />
           </div>
-
         </>
-        
       )}
-      
     </Container>
-    
   );
 };
 
 export default Home;
-
