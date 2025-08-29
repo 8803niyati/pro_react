@@ -1,28 +1,76 @@
 {
   "products": [
     {
-      "id": "084913",
-      "title": "nmmn",
-      "desc": "mnn",
-      "price": "454",
-      "category": "Cold Drinks & Juices",
-      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/f/3/f33e52fMINIM00000261_1.jpg"
-    },
-    {
-      "id": "625179",
-      "title": "njnm",
-      "desc": "nmnm",
+      "id": "247760",
+      "title": "lipstick",
+      "category": "Makeup",
       "price": "45",
-      "category": "Cold Drinks & Juices",
-      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/6/9/69b3fc86902395841562_1.jpg"
+      "brand": "matte lipstick",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/7/b/7b8686c8904245710958_1.jpg"
     },
     {
-      "id": "083423",
-      "title": "nmn",
-      "category": "Cold Drinks & Juices",
-      "price": "454",
-      "brand": "wdwf",
-      "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/629b2189-65f7-49cb-bb5d-8bfdf0befea7.png"
+      "id": "669950",
+      "title": "lorial shampoo",
+      "category": "Hair",
+      "price": "200",
+      "brand": "shampoo",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/7/a/7a08940LOREA00000659_1.jpg"
+    },
+    {
+      "id": "662876",
+      "title": "himaliya",
+      "category": "Skin",
+      "price": "72",
+      "brand": "simple",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/8/6/86174ee5011451103863_1.jpg"
+    },
+    {
+      "id": "329063",
+      "title": "plam",
+      "category": "Skin",
+      "price": "40",
+      "brand": "fash wash",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/f/d/fdd18dfPLUMX00001034_1.jpg"
+    },
+    {
+      "id": "764215",
+      "title": "lotus",
+      "category": "Skin",
+      "price": "80",
+      "brand": "harbal",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/f/5/f562a108909250004825_n01.jpg"
+    },
+    {
+      "id": "457605",
+      "title": "serum",
+      "category": "Hair",
+      "price": "100",
+      "brand": "hair water",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/3/c/3ca3991NYKAB00001295_1.jpg"
+    },
+    {
+      "id": "313721",
+      "title": "shampoo",
+      "category": "Hair",
+      "price": "400",
+      "brand": "combo",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/0/f/0fce9f78904245713966_1.jpg"
+    },
+    {
+      "id": "403363",
+      "title": "ozive",
+      "category": "Health & wellness",
+      "price": "700",
+      "brand": "hair vitamin",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/2/7/274b38bOZIVA00000019_1.jpg"
+    },
+    {
+      "id": "586653",
+      "title": "hair shampoo",
+      "category": "Hair",
+      "price": "700",
+      "brand": "new",
+      "image": "https://images-static.nykaa.com/media/catalog/product/tr:w-220,h-220,cm-pad_resize/b/e/beba4c6NYNYKBC001421_1.jpg"
     }
   ],
   "users": []

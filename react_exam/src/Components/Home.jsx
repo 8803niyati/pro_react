@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { deleteProductAsync, getAllProductAsync } from "../Services/Actions/productAction";
 import { Button, Card, Container, Row, Col, Spinner, Form, InputGroup } from "react-bootstrap";
 import { useNavigate } from "react-router";
@@ -55,6 +56,7 @@ const Home = () => {
   const categories = [...new Set(products.map((prod) => prod.category).filter(Boolean))];
 
   return (
+
     <Container className="my-4">
       <h2 className="mb-4 text-center">PRODUCT LISTING</h2>
 
@@ -154,10 +156,15 @@ const Home = () => {
               forcePage={currentPage}
             />
           </div>
+
         </>
+        
       )}
+      
     </Container>
+    
   );
 };
 
 export default Home;
+

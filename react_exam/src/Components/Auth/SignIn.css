@@ -1,0 +1,115 @@
+/* 🔹 Form Card */
+.form-container {
+  max-width: 450px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔹 Heading */
+.form-container h2 {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* 🔹 Labels */
+.form-label {
+  font-weight: 600;
+  color: #444;
+}
+
+/* 🔹 Inputs */
+.form-container .form-control {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-container .form-control:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 6px rgba(108, 99, 255, 0.4);
+}
+
+/* 🔹 Primary Button */
+.custom-btn {
+  background: linear-gradient(135deg, #6c63ff, #5146d9);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 0;
+  transition: 0.3s ease;
+}
+
+.custom-btn:hover {
+  background: linear-gradient(135deg, #5146d9, #3c34b5);
+  transform: scale(1.02);
+}
+
+/* 🔹 Google Button */
+.google-btn {
+  background: #d86a60;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 10px 0;
+  transition: 0.3s ease;
+}
+
+.google-btn:hover {
+  background: #b5362c;
+  transform: scale(1.02);
+}
+
+/* 🔹 Error message */
+.error-message {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #ffe6e6;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Link */
+.form-container p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.form-container p a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-container p a:hover {
+  text-decoration: underline;
+  color: #5146d9;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 576px) {
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .form-label {
+    text-align: left !important;
+  }
+}
